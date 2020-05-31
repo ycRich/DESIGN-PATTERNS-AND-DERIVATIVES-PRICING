@@ -21,7 +21,7 @@ def simpleMonteCarlo1(Expiry, Strike, Spot, Vol, r, NumberOfPaths):
     W = np.random.randn(NumberOfPaths, 1)
 
     movedSpot = Spot * np.exp(r * Expiry + itoCorrection + rootVariance * W)
-    avgPayOff = np.mean([max(s_t, 0) for s_t in movedSpot])
+    avgPayOff = np.mean([max(s_t - Strike, 0) for s_t in movedSpot])
     
 
     return np.exp( - r * Expiry) * avgPayOff

@@ -19,6 +19,7 @@ def simpleMonteCarlo2(payOff, Expiry, Strike, Spot, Vol, r, NumberOfPaths):
     """Simple Monte Carlo implementation to price vanila call option
 
     Arguments:
+        payoff {PayOff} -- payoff class instance
         Expiry {float} -- time to expiry
         Strike {float} -- strike price
         Spot {float} -- spot/current price
